@@ -5,4 +5,4 @@ CREATE TABLE MenuItems (
     price DECIMAL(10,2) NOT NULL,
     categoryId INT NULL,
     FOREIGN KEY (categoryId) REFERENCES MenuCategories(id) ON DELETE SET NULL
-);
+); 

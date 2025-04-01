@@ -1,4 +1,4 @@
 CREATE TABLE MenuCategories (
     id INT AUTO_INCREMENT PRIMARY KEY,
     categoryName VARCHAR(255) NOT NULL
-);
+); 
