@@ -51,4 +51,4 @@ def generate_stock_transactions(num_transactions=300, start_id=1220):
 
     return ",\n".join(transactions)
 
-print(generate_stock_transactions())
+print(generate_stock_transactions())  
