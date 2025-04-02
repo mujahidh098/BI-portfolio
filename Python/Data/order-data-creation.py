@@ -76,4 +76,4 @@ def generate_order_menu_items(num_items=200, start_id=753):
 
 order_menu_items, order_totals = generate_order_menu_items()
 print("INSERT INTO OrderMenuItems VALUES\n" + order_menu_items + ";")
-print("INSERT INTO Orders VALUES\n" + generate_orders(order_totals) + ";")
+print("INSERT INTO Orders VALUES\n" + generate_orders(order_totals) + ";") 
