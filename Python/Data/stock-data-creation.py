@@ -1,10 +1,10 @@
 import random
 import datetime
 
-def generate_stock_transactions(num_transactions=300, start_id=1220):
+def generate_stock_transactions(num_transactions=1000, start_id=1220):
     """Generates SQL INSERT value rows for StockTransactions."""
 
-    stock_codes = ['BUN001', 'BEEF001', 'LETT001', 'TOMA001', 'CHEESE001', 'SAUCE001', 'COLA001', 'FRIES001', 'WRAP001', 'ONION001', 'CHICK001', 'BACON001', 'JALA001', 'MAYO001', 'SODA001', 'PICKLE001', 'MUSTARD001', 'ORANGE001', 'RINGS001', 'BOX001']
+    stock_codes = ['BUN001', 'BEEF001', 'LETT001', 'TOMA001', 'CHEESE001', 'SAUCE001', 'COLA001', 'FRIES001', 'WRAP001', 'ONION001', 'CHICK001', 'MACON001', 'JALA001', 'MAYO001', 'SODA001', 'PICKLE001', 'MUSTARD001', 'ORANGE001', 'RINGS001', 'BOX001']
     source_types = ['DELIVERY_INCREASE', 'ORDER', 'STOCKTAKE_INCREASE', 'WASTE', 'DELIVERY_DECREASE', 'STOCK_RETURN', 'CREDIT_NOTE_DECREASE', 'CREDIT_NOTE_INCREASE', 'REVERSE_TRANSFER_INCREASE', 'REVERSE_TRANSFER_DECREASE', 'REVERSE_WASTE', 'ROUNDING_ADJUSTMENT', 'STORE_SETUP_STOCKTAKE_INCREASE', 'TRANSFER_INCREASE', 'PRODUCTION_INCREASE', 'PRODUCTION_DECREASE', 'STOCKTAKE_DECREASE', 'VOID_ORDER']
     batch_ids = list(range(2200, 2209))  # batch_id range
     unit_type_ids = list(range(1, 5)) # unit_type_id range
@@ -17,7 +17,7 @@ def generate_stock_transactions(num_transactions=300, start_id=1220):
 
     for i in range(num_transactions):
         id_val = start_id + i
-        source_id = 9710 # Example source id
+        source_id = 9890 # Example source id
         transaction_cost = round(random.uniform(0.5, 100), 2)
         quantity = round(random.uniform(0.1, 100), 2)
         random_days = random.randint(0, (end_date - start_date).days)
