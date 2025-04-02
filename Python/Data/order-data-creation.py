@@ -1,24 +1,24 @@
 import random
 import datetime
 
-# Creating random data for my orders and order menu items tables
+# Creating random data for Orders and OrderMenuItems tables
 
-def generate_orders(num_orders=1000, start_id=9711):
-    statuses = ['COMPLETED', 'ABANDONED', 'REFUNDED', 'VOIDED']  #Order statuses
-    channels = ['COUNTER', 'CALL_IN'] #Different channels
-    channel_groups = ['IN_STORE', '3RD_PARTY', 'CALL_ORDER'] #Different channel groups
-    service_types = ['TAKE_AWAY', 'DINE_IN'] #Different service types
+def generate_orders(order_totals, num_orders=100, start_id=211):
+    statuses = ['COMPLETED', 'ABANDONED', 'REFUNDED', 'VOIDED']  # Order statuses
+    channels = ['COUNTER', 'CALL_IN']  # Different channels
+    channel_groups = ['IN_STORE', '3RD_PARTY', 'CALL_ORDER']  # Different channel groups
+    service_types = ['TAKE_AWAY', 'DINE_IN']  # Different service types
     stores = list(range(1, 6))
 
     orders = []
-    start_date = datetime.date(2024, 1, 1)
-    end_date = datetime.date(2024, 3, 31)
+    start_date = datetime.date(2024, 2, 1)
+    end_date = datetime.date(2024, 2, 29)
 
     for i in range(num_orders):
         order_id = start_id + i
         order_number = order_id * 10
         status = random.choice(statuses)
-        subtotal = round(random.uniform(50, 500), 2)
+        subtotal = round(order_totals.get(order_id, random.uniform(50, 500)), 2)
         delivery_fee = round(random.uniform(0, 50), 2)
         discount = round(random.uniform(0, 30), 2)
         total = round(subtotal + delivery_fee - discount, 2)
@@ -39,24 +39,41 @@ def generate_orders(num_orders=1000, start_id=9711):
     return ",\n".join(orders)
 
 
-def generate_order_menu_items(num_items=3000, start_id=20753):
-    menu_item_ids = list(range(1, 51))  # Assuming 50 menu items
-    category_ids = list(range(1, 6))    # Assuming 5 categories
-
+def generate_order_menu_items(num_items=200, start_id=753):
+    menu_item_prices = {
+        1: 8.99,  # Single Beef
+        2: 12.99, # Double Beef
+        3: 9.99,  # Fried Chicken
+        4: 14.99  # Combo Meal
+    }
+    order_totals = {}
     order_menu_items = []
+    start_date = datetime.date(2024, 2, 1)
+    end_date = datetime.date(2024, 2, 29)
+
     for i in range(num_items):
         item_id = start_id + i
-        order_id = random.randint(9711, 9711 + 999)  # Orders generated in previous function
-        menu_item_id = random.choice(menu_item_ids)
-        total = round(random.uniform(5, 100), 2)
-        effective_tax = round(random.uniform(0, 20), 2)
-        category_id = random.choice(category_ids)
+        order_id = random.randint(211, 310)
+        menu_item_id = random.choice(list(menu_item_prices.keys()))
+        price = menu_item_prices[menu_item_id]
+        quantity = random.randint(1, 5)
+        total = round(price * quantity, 2)
+        effective_tax = round(total * 0.15, 2)
+        category_id = 1 if menu_item_id <= 3 else 2
+        created_at = start_date + datetime.timedelta(days=random.randint(0, (end_date - start_date).days))
 
-        item = f"({item_id}, NOW(), NOW(), {order_id}, {menu_item_id}, {total}, NULL, {effective_tax}, {category_id})"
+        # Track the total for each order
+        if order_id in order_totals:
+            order_totals[order_id] += total
+        else:
+            order_totals[order_id] = total
+
+        item = f"({item_id}, '{created_at}', '{created_at}', {order_id}, {menu_item_id}, {total}, NULL, {effective_tax}, {category_id})"
         order_menu_items.append(item)
 
-    return ",\n".join(order_menu_items)
+    return ",\n".join(order_menu_items), order_totals
 
 
-print("INSERT INTO Orders VALUES\n" + generate_orders() + ";")
-print("INSERT INTO OrderMenuItems VALUES\n" + generate_order_menu_items() + ";")
+order_menu_items, order_totals = generate_order_menu_items()
+print("INSERT INTO OrderMenuItems VALUES\n" + order_menu_items + ";")
+print("INSERT INTO Orders VALUES\n" + generate_orders(order_totals) + ";")
