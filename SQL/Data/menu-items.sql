@@ -11,7 +11,7 @@ CREATE TABLE MenuItems (
 
 -- Insert Menu Items
 INSERT INTO MenuItems (name, description, price, categoryId) VALUES
-('Single Beef', 'A classic beef burger with fresh toppings.', 8.99, (SELECT id FROM MenuCategories WHERE categoryName = 'Burgers')),
-('Double Beef', 'Double the beef, double the flavor.', 12.99, (SELECT id FROM MenuCategories WHERE categoryName = 'Burgers')),
-('Fried Chicken', 'Crispy fried chicken burger.', 9.99, (SELECT id FROM MenuCategories WHERE categoryName = 'Burgers')),
-('Combo Meal', 'Burger, fries, and a drink.', 14.99, (SELECT id FROM MenuCategories WHERE categoryName = 'Combos'));
+('Single Beef', 'A classic beef burger with fresh toppings.', 68.99, (SELECT id FROM MenuCategories WHERE categoryName = 'Burgers')),
+('Double Beef', 'Double the beef, double the flavor.', 66.99, (SELECT id FROM MenuCategories WHERE categoryName = 'Burgers')),
+('Fried Chicken', 'Crispy fried chicken burger.', 65.99, (SELECT id FROM MenuCategories WHERE categoryName = 'Burgers')),
+('Combo Meal', 'Burger, fries, and a drink.', 99.99, (SELECT id FROM MenuCategories WHERE categoryName = 'Combos'));
