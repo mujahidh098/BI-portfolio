@@ -1,3 +1,5 @@
+-- Cost of Sales
+
 WITH LatestStock AS (
     SELECT
         st.stockItemStockCode,
