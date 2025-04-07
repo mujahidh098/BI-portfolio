@@ -41,10 +41,10 @@ def generate_orders(order_totals, num_orders=100, start_id=211):
 
 def generate_order_menu_items(num_items=200, start_id=753):
     menu_item_prices = {
-        1: 8.99,  # Single Beef
-        2: 12.99, # Double Beef
-        3: 9.99,  # Fried Chicken
-        4: 14.99  # Combo Meal
+        1: 68.99,  # Single Beef
+        2: 88.99, # Double Beef
+        3: 65.99,  # Fried Chicken
+        4: 99.99  # Combo Meal
     }
     order_totals = {}
     order_menu_items = []
