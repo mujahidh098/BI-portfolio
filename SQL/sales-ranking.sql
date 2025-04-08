@@ -1,4 +1,4 @@
--- Menu Ranking
+-- Sales Ranking
 
 SELECT
     name,
@@ -12,5 +12,7 @@ FROM (
         SUM(omi.total) AS total_sales
     FROM OrderMenuItems omi
     INNER JOIN MenuItems mi ON omi.itemId = mi.id
+    INNER JOIN Orders o ON omi.orderId = o.id
+    WHERE o.status = 'COMPLETED'
     GROUP BY mi.name
 ) AS item_stats;
