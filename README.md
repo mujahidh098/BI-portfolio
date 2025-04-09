@@ -16,7 +16,6 @@ I'm an Analytics and Business Intelligence professional with 3+ years of experie
 
 ## 📂 Repository Structure
 
-```bash
 BI-portfolio/
 │
 ├── sql/                    # SQL queries used in reporting and analysis
@@ -27,6 +26,8 @@ BI-portfolio/
 ---
 
 ## 🔍 Featured Projects
+
+---
 
 ### 📅 Sales Forecasting with Machine Learning  
 - Predicts daily sales for February 2025 using historical order data  
@@ -52,7 +53,7 @@ BI-portfolio/
 
 ## 📊 Coming Soon
 
-Interactive dashboards to visualize:
-- Product performance  
-- Monthly trends  
-- Forecast accuracy vs actuals  
+- Interactive dashboards to visualize:
+  - Product performance  
+  - Monthly trends  
+  - Forecast accuracy vs actuals  
