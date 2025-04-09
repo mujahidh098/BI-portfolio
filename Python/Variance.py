@@ -7,7 +7,7 @@ from sklearn.metrics import mean_squared_error
 
 # DB Connection
 try:
-    engine = create_engine('mysql+pymysql://root:Poesface2705@localhost/sample')
+    engine = create_engine('mysql+pymysql://root:***********@localhost/sample')
     connection = engine.connect()
     print("Connection successful.")
 except Exception as e:
