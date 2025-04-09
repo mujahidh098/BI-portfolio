@@ -53,6 +53,6 @@ I'm an Analytics and Business Intelligence professional with 3+ years of experie
 BI-portfolio/
 │
 ├── sql/                    # SQL queries used in reporting and analysis
-├── data/                   # Sample anonymized datasets
+├── data/                   # Sample datasets
 ├── python/                 # Python projects for forecasting and insights
 └── README.md               # This file
