@@ -1,6 +1,8 @@
 import random
 import datetime
 
+# Creating random data for Stock Transactions table
+
 def generate_stock_transactions(num_transactions=1000, start_id=1220):
     """Generates SQL INSERT value rows for StockTransactions."""
 
