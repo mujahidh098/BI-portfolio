@@ -18,8 +18,8 @@ I'm an Analytics and Business Intelligence professional with 4+ years of experie
 
 ---
 
-### 📅 Sales Forecasting with Machine Learning  
-- Predicts daily sales for February 2025 using historical order data  
+### 📅 Forecasting with Machine Learning  
+- Predicts sales for February 2025 using historical data  
 - Implements a Random Forest model with custom feature engineering  
 - Includes actual vs predicted charts with variance labels  
 - Built with Pandas, scikit-learn, and Matplotlib  
