@@ -14,17 +14,6 @@ I'm an Analytics and Business Intelligence professional with 3+ years of experie
 
 ---
 
-## 📂 Repository Structure
-
-BI-portfolio/
-│
-├── sql/                    # SQL queries used in reporting and analysis
-├── data/                   # Sample anonymized datasets
-├── python/                 # Python projects for forecasting and insights
-└── README.md               # This file
-
----
-
 ## 🔍 Featured Projects
 
 ---
@@ -57,3 +46,13 @@ BI-portfolio/
   - Product performance  
   - Monthly trends  
   - Forecast accuracy vs actuals  
+
+## 📂 Repository Structure
+
+```bash
+BI-portfolio/
+│
+├── sql/                    # SQL queries used in reporting and analysis
+├── data/                   # Sample anonymized datasets
+├── python/                 # Python projects for forecasting and insights
+└── README.md               # This file
