@@ -6,7 +6,7 @@ import numpy as np
 
 # Connect to database
 try:
-    engine = create_engine('mysql+pymysql://root:**********@localhost/sample')
+    engine = create_engine('mysql+pymysql://root:Poesface2705@localhost/sample')
     connection = engine.connect()
     print("Connection successful.")
 except Exception as e:
