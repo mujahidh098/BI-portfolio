@@ -19,7 +19,7 @@ CREATE TABLE Users (
   overtimeRate decimal(12,2) DEFAULT NULL,
   PRIMARY KEY (id),
   UNIQUE KEY uuid (uuid),
-  KEY groupId (groupId),
+  KEY groupId (groupId)
 ) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
 
 
