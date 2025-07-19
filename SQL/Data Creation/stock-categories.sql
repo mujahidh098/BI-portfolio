@@ -16,9 +16,9 @@ CREATE TABLE StockCategories (
 INSERT INTO StockCategories (externalID, name, createdAt, updatedAt, createdBy, synced) VALUES
 (1001, 'Buns', NOW(), NULL, 1, 0),
 (1002, 'Meats', NOW(), NULL, 2, 0),
-(1003, 'Vegetables', NOW(), NULL, 3, 0),
+(1003, 'Vegetables', NOW(), NULL, 10, 0),
 (1004, 'Sauces', NOW(), NULL, 1, 0),
 (1005, 'Drinks', NOW(), NULL, 2, 0),
-(1006, 'Sides', NOW(), NULL, 3, 0),
+(1006, 'Sides', NOW(), NULL, 10, 0),
 (1007, 'Packaging', NOW(), NULL, 1, 0),
 (1008, 'Dairy', NOW(), NULL, 2, 0);
