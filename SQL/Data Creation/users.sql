@@ -26,4 +26,4 @@ CREATE TABLE Users (
 INSERT INTO Users (id, email, password, cellphone, firstName, lastName, uuid) VALUES
 (1, 'user1@example.com', 'password1', '123-456-7890', 'John', 'Doe', UUID()),
 (2, 'user2@example.com', 'password2', '987-654-3210', 'Jane', 'Smith', UUID()),
-(10, 'user3@example.com', 'password3', '555-123-4567', 'Alice', 'Johnson', UUID());
+(3, 'user3@example.com', 'password3', '555-123-4567', 'Alice', 'Johnson', UUID());
